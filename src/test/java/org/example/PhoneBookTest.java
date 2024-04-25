@@ -1,6 +1,7 @@
 package org.example;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -23,4 +24,11 @@ class PhoneBookTest {
         int result = PhoneBook.add(name, phoneNumber);
         Assertions.assertEquals(expected, result);
     }
+
+    @Test
+    void findByNumber() {
+        String result = PhoneBook.findByNumber("89880356534");
+        Assertions.assertEquals("Иван", result);
+    }
+
 }
