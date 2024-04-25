@@ -29,6 +29,7 @@ class PhoneBookTest {
     void findByNumber() {
         String result = PhoneBook.findByNumber("89880356534");
         Assertions.assertEquals("Иван", result);
+        Assertions.assertNotNull(result);
     }
 
 }

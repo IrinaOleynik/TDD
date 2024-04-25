@@ -10,6 +10,13 @@ public class PhoneBook {
        return phoneBook.size();
     }
     public static String findByNumber(String phoneNumber) {
+        if (phoneBook.containsValue(phoneNumber)) {
+            for (Map.Entry<String, String> kv : phoneBook.entrySet()) {
+                if (kv.getValue().equals(phoneNumber)) {
+                    return kv.getKey();
+                }
+            }
+        }
         return null;
     }
 }
