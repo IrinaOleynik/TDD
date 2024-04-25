@@ -4,6 +4,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 class PhoneBookTest {
@@ -31,6 +35,17 @@ class PhoneBookTest {
         String result = PhoneBook.findByName("Мария");
         Assertions.assertEquals("89250759178", result);
         Assertions.assertNotNull(result);
+    }
+    @Test
+    void printAllNames(){
+        List<String> names = new ArrayList<>();
+        names.add("Мария");
+        names.add("Иван");
+        names.add("Василий");
+        names.add("Петя");
+        String expected = names.stream().sorted(Comparator.naturalOrder()).collect(Collectors.joining());
+        String result = PhoneBook.printAllNames();
+        Assertions.assertEquals(expected, result);
     }
 
 }

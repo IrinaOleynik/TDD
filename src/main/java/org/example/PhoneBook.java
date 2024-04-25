@@ -22,4 +22,7 @@ public class PhoneBook {
     public static String findByName(String name) {
         return phoneBook.get(name);
     }
+    public static String printAllNames() {
+        return null;
+    }
 }
