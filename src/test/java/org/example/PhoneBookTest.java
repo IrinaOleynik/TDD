@@ -31,5 +31,11 @@ class PhoneBookTest {
         Assertions.assertEquals("Иван", result);
         Assertions.assertNotNull(result);
     }
+    @Test
+    void findByName() {
+        String result = PhoneBook.findByName("Мария");
+        Assertions.assertEquals("89250759178", result);
+        Assertions.assertNotNull(result);
+    }
 
 }
