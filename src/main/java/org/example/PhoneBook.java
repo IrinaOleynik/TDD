@@ -1,7 +1,9 @@
 package org.example;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class PhoneBook {
     static Map<String, String> phoneBook = new HashMap<>();
@@ -23,6 +25,6 @@ public class PhoneBook {
         return phoneBook.get(name);
     }
     public static String printAllNames() {
-        return null;
+        return phoneBook.keySet().stream().sorted(Comparator.naturalOrder()).collect(Collectors.joining());
     }
 }
